@@ -102,7 +102,7 @@ namespace Persons
                 }
 
                 var user = await roleMagar.FindByIdAsync("73dad67f-e312-4bc0-9db5-8d0351af64e9");
-                await userMagar.AddToRoleAsync(user, "Admin");
+                //await userMagar.AddToRoleAsync(user, "Admin");
 
             }
 
