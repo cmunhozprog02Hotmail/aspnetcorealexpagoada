@@ -85,9 +85,9 @@ namespace Persons
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            await CreateRoles(serviceProvider);
+            //await CreateRoles(serviceProvider);
         }
-        private async Task CreateRoles(IServiceProvider serviceProvider)
+        /*private async Task CreateRoles(IServiceProvider serviceProvider)
         {
             var roleMagar = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var userMagar = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
@@ -106,7 +106,7 @@ namespace Persons
 
             }
 
-        }
+        }*/
         
 
     }

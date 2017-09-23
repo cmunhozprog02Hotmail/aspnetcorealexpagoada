@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Persons.Models.AccountViewModels
 {
@@ -19,5 +21,26 @@ namespace Persons.Models.AccountViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Permisos")]
+        [UIHint("List")]
+        public List<SelectListItem> Roles { get; set; }
+        public string Role { get; set; }
+
+        public RegisterViewModel()
+        {
+            Roles = new List<SelectListItem>();
+            Roles.Add(new SelectListItem()
+            {
+                Value = "1",
+                Text = "Admin"
+            });
+            Roles.Add(new SelectListItem()
+            {
+                Value = "2",
+                Text = "User"
+            });
+        }
     }
 }
